@@ -1,0 +1,57 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  6                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      motionProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dynamicFvMesh      dynamicMotionSolverFvMesh;
+/*
+dynamicInkJetFvMesh
+dynamicMotionSolverFvMesh
+dynamicRefineFvMesh
+multiSolidBodyMotionFvMesh
+solidBodyMotionFvMesh
+staticFvMesh
+*/
+
+motionSolverLibs ("libfvMotionSolvers.so");
+
+solver            displacementLaplacian;
+/*
+displacementComponentLaplacian
+displacementInterpolation
+displacementLaplacian
+displacementLayeredMotion
+displacementSBRStress
+velocityComponentLaplacian
+velocityLaplacian
+*/
+
+displacementLaplacianCoeffs 
+{
+diffusivity       inverseDistance (cylinder);
+
+/*directional
+exponential
+file
+inverseDistance
+inverseFaceDistance
+inversePointDistance
+inverseVolume
+motionDirectional
+quadratic
+uniform
+*/
+}
+
+// ************************************************************************* //

@@ -1,0 +1,38 @@
+#How to run me:
+
+
+
+#To clean the directory, this is optional
+
+foamCleanTutorials
+
+rm -rf 0 > /dev/null 2>&1
+
+cp -r 0_org 0
+
+
+
+#To generate the mesh and check mesh quality
+
+blockMesh  
+
+checkMesh
+
+
+
+#To test the kinematics sue
+
+#moveDynamicMesh -noFunctionObjects
+
+
+
+#To run the solver with moving mesh
+
+pimpleFoam | tee log.solver
+
+
+
+
+
+
+

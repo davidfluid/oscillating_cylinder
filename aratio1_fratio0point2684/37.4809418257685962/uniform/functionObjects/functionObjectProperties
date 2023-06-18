@@ -1,0 +1,95 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "37.4809418257685962/uniform/functionObjects";
+    object      functionObjectProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+results
+{
+    inMassFlow
+    {
+        scalar
+        {
+            sum(in,phi)     -100;
+        }
+    }
+    outMassFlow
+    {
+        scalar
+        {
+            sum(out,phi)    100.0000000028519;
+        }
+    }
+    forces_object
+    {
+        vector
+        {
+            normalForce     ( 5.9455571 0.19931596 -3.1939204e-19 );
+            tangentialForce ( 1.7183419 0.052009189 1.305762e-20 );
+            porousForce     ( 0 0 0 );
+            normalMoment    ( 5.2479736e-19 -6.6168147e-19 -0.36522151 );
+            tangentialMoment ( 1.6766889e-19 2.6275815e-20 -0.14102746 );
+            porousMoment    ( 0 0 0 );
+        }
+    }
+    forceCoeffs_object
+    {
+        scalar
+        {
+            Cd              7.663898969653522;
+            Cs              3.063344166605873e-19;
+            Cl              0.2513251502318284;
+            CmRoll          6.92466248434442e-19;
+            CmPitch         0.5062489605927799;
+            CmYaw           -6.354056582833243e-19;
+            Cd(f)           3.831949484826761;
+            Cd(r)           3.831949484826761;
+            Cs(f)           -4.822384499530307e-19;
+            Cs(r)           7.885728666136179e-19;
+            Cl(f)           0.6319115357086941;
+            Cl(r)           -0.3805863854768657;
+        }
+    }
+    minmaxdomain
+    {
+        vector
+        {
+            min(U)          ( 1.2242106 -1.5737702 -1.6928754e-18 );
+            min(U)_position ( 19.629832 -1.6184264 0 );
+            max(U)          ( 3.4711838 1.2052017 8.0661877e-19 );
+            max(U)_position ( 15.02641 0.55946728 0 );
+            min(p)_position ( -2.1130441 0.99550019 2.7991699e-17 );
+            max(p)_position ( -2.8656699 -0.040619355 0 );
+        }
+        label
+        {
+            min(U)_cell     1604;
+            min(U)_processor 0;
+            max(U)_cell     1393;
+            max(U)_processor 0;
+            min(p)_cell     6300;
+            min(p)_processor 0;
+            max(p)_cell     7855;
+            max(p)_processor 0;
+        }
+        scalar
+        {
+            min(p)          -4.858167589954854;
+            max(p)          4.342315745302773;
+        }
+    }
+}
+
+
+// ************************************************************************* //
